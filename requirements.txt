@@ -1,0 +1,8 @@
+gunicorn
+Flask
+pandas
+scikit-learn
+geopy
+tabulate
+nltk
+numpy

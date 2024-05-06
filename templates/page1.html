@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Website Title -->
+    <title>Saudi Reference Travel and Tour | HOME</title>
+
+    <!-- <meta name="keywords" content="" />
+    <meta name="description" content="" />
+
+    <meta name="author" content="" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="google" content="nositelinkssearchbox" /> -->
+
+    <link
+      rel="shortcut icon"
+      href="./assets/default-favicon.ico"
+      type="image/x-icon"
+    >
+
+    <!-- Google Fonts -->
+    <!-- Preconnecting can help reduce the latency when actual requests are made to this domain, such as when fetching font resources. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Font Awesome Icon -->
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}" />
+
+  </head>
+  <body>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    
+    <!---------- Header----------->
+    <header>
+      <div>
+        <a href=""
+          ><img src="{{ url_for('static', filename='assets/logo.png') }}" class="header-logo" alt="" /></a>
+
+          <nav>
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('contact') }}">Contact</a>
+        </nav>
+        
+        <div>
+          <a href="">
+            <span><i class="fas fa-user"></i></span>
+            <p>Log In</p></a
+          >
+        </div>
+      </div>
+    </header>
+    <!--  -->
+    <section>
+      <div class="home2-hero-section">
+        <div class="home2-hero-section-content container">
+          <div class="home2-hero-gird">
+            <div class="home2-hero-grid-left">
+              <div>
+                <h1>
+                  Explore
+                  <span>Saudi</span>
+                  <span>Arabia</span>
+                </h1>
+                <h2>Whereever you wish to go</h2>
+                <a href="{{ url_for('whereto') }}">
+                  <button>
+                    To where?<i class="fal fa-chevron-circle-right"></i>
+                  </button>
+                </a>
+              </div>
+            </div>
+
+
+
+            <div class="home2-hero-grid-right">
+              <div class="hero-card">
+                <img src="{{ url_for('static', filename='assets/AlUla.png') }}" alt="AlUla" />
+                <h2>AIUIa</h2>
+                <p>
+                  Al-Ula is an ancient Arabic oasis city located in Medina
+                  Province, Saudi Arabia.
+                </p>
+                <button>
+                  Explore More<i class="fal fa-chevron-circle-right"></i>
+                </button>
+              </div>
+              <div class="hero-card">
+                <img src="{{ url_for('static', filename='assets/Riyadh.jpeg') }}" alt="Riyadh" />
+                <h2>Riyadh</h2>
+                <p>
+                  Riyadh, Saudi Arabia’s capital and main financial hub, is on a
+                  desert plateau in the country’s center.
+                </p>
+                <button>
+                  Explore More<i class="fal fa-chevron-circle-right"></i>
+                </button>
+              </div>
+              <div class="hero-card">
+                <img src="{{ url_for('static', filename='assets/Jeddah.jpg') }}" alt="Jeddah" />
+                <h2>Jeddah</h2>
+                <p>Jeddah is a major urban center in Saudi Arabia, located on the coast of the Red Sea.</p>
+                <button>
+                  Explore More<i class="fal fa-chevron-circle-right"></i>
+                </button>
+              </div>
+              <div class="hero-card">
+                <img src="{{ url_for('static', filename='assets/alkhobar.jpg') }}" alt="alkhobar" />
+                <h2>Khobar</h2>
+                <p>
+                  Al-Khobar is a Saudi Arabian city on the Arabian Gulf. Its
+                  Corniche, a large waterfront area
+                </p>
+                <button>
+                  Explore More<i class="fal fa-chevron-circle-right"></i>
+                </button>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="{{ url_for('static', filename='style/app.js') }}"></script>
+  </body>
+</html>

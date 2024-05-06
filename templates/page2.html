@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Website Title -->
+  <title>Saudi Reference Travel and Tour | HOME</title>
+
+  <!-- <meta name="keywords" content="" />
+    <meta name="description" content="" />
+
+    <meta name="author" content="" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="google" content="nositelinkssearchbox" /> -->
+
+  <link rel="shortcut icon" href="./assets/default-favicon.ico" type="image/x-icon" />
+
+  <!-- Google Fonts -->
+  <!-- Preconnecting can help reduce the latency when actual requests are made to this domain, such as when fetching font resources. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Font Awesome Icon -->
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}" />
+</head>
+
+<body>
+  <!---------- Header----------->
+  <header>
+    <div>
+      <a href="">
+        <img src="{{ url_for('static', filename='assets/logo.png') }}" class="header-logo" alt="" /></a>
+
+      <nav>
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('about') }}">About</a>
+        <a href="{{ url_for('contact') }}">Contact</a>
+      </nav>
+      <div>
+        <a href="">
+          <span><i class="fas fa-user"></i></span>
+          <p>Log In</p>
+        </a>
+      </div>
+    </div>
+  </header>
+  <!--  -->
+
+  <section>
+    <div class="home-hero-section">
+      <div class="home-hero-section-content">
+        <div class="home-hero-section-heading">wherever you wish to go!</div>
+        <hr>
+        <div class="home-hero-section-search">
+          <form method="post" action="/page3">
+            <input type="text" name="description" placeholder="where would you like to visit?" />
+            <input type="hidden" id="location" name="location" />
+            <input type="hidden" id="latitude" name="latitude" />
+            <input type="hidden" id="longitude" name="longitude" />
+            <span> <button type="submit" style="border: none;background-color: transparent;"><i class="fa fa-search"
+                  style="cursor: pointer;"></i></button></span>
+
+          </form>
+          <script>
+            function askForLocation() {
+              var response = confirm("Can we access your location to provide accurate results?");
+
+              if (response) {
+                getLocation();
+              } else {
+                location.href = "/";
+              }
+            }
+
+            function getLocation() {
+              if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+              } else {
+                alert("Geolocation is not supported by this browser.");
+              }
+            }
+
+            function showPosition(position) {
+              const latitude = position.coords.latitude;
+              const longitude = position.coords.longitude;
+
+               // Combine latitude and longitude with a comma separator
+              const location = latitude + "," + longitude;
+              
+              const locationInput = document.getElementById('location');
+              const latitudeInput = document.getElementById('latitude');
+              const longitudeInput = document.getElementById('longitude');
+
+              locationInput.value = location;
+              latitudeInput.value = latitude;
+              longitudeInput.value = longitude;
+
+               // Show a notification with the user's location
+              const notification = "Your location: " + location;
+              alert(notification);
+            }
+
+            askForLocation();
+          </script>
+
+          <!-- <a href="{{ url_for('page3') }}"><span> <i class="far fa-search"></i></span></a> -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <script src="{{ url_for('static', filename='style/app.js') }}"></script>
+</body>
+
+</html>

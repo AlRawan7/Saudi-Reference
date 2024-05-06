@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Website Title -->
+    <title>Saudi Reference Travel and Tour | HOME</title>
+
+    <!-- <meta name="keywords" content="" />
+    <meta name="description" content="" />
+
+    <meta name="author" content="" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="google" content="nositelinkssearchbox" /> -->
+
+    <link rel="shortcut icon" href="./assets/default-favicon.ico" type="image/x-icon" />
+
+    <!-- Google Fonts -->
+    <!-- Preconnecting can help reduce the latency when actual requests are made to this domain, such as when fetching font resources. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Font Awesome Icon -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}" />
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='style/header.css') }}" /> -->
+
+    <style>
+        body {
+            background-image: url("../static/assets/About.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: 
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div>
+            <a href=""><img src="{{ url_for('static', filename='assets/logo.png') }}" class="header-logo" alt="" /></a>
+
+            <nav>
+                <a href="{{ url_for('home') }}">Home</a>
+                <a href="{{ url_for('about') }}">About</a>
+                <a href="{{ url_for('contact') }}">Contact</a>
+            </nav>
+            <div>
+                <a href="">
+                    <span><i class="fas fa-user"></i></span>
+                    <p>Log In</p>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <script src="{{ url_for('static', filename='style/app.js') }}"></script>
+</body>
+
+</html>
